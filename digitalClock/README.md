@@ -1,4 +1,4 @@
-Hosted link:
+Hosted link:https://rajkumarrj.github.io/module-4/digitalClock/index.html
 
 This HTML, CSS, and JavaScript code creates a digital clock with a stylish and responsive design.
 
