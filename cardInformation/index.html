@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Project</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #container{
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .field{
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            text-align: center;
+        }
+        span:nth-child(1){
+            font-weight: 600;
+            width: 50%;
+            text-align: left;
+        }
+        span:nth-child(2){
+           width: 30%;
+           text-align: left;
+        }
+        h2{
+            color:#333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>User Information Card</h2>
+        <div class="field">
+            <span id="first-name">First Name:</span>
+            <span id="first-ans"></span>
+        </div>
+        <div class="field">
+            <span id="last-name">Last Name:</span>
+            <span id="last-ans"></span>
+        </div>
+        <div class="field">
+            <span id="country-name">country:</span>
+            <span id="country-ans"></span>
+        </div>
+        <div class="field">
+            <span id="phone-number">Phone Number:</span>
+            <span id="phone-ans"></span>
+        </div>
+        <div class="field">
+            <span id="state-name">State:</span>
+            <span id="state-ans"></span>
+        </div>
+        <div class="field">
+            <span id="city-name">City:</span>
+            <span id="city-ans"></span>
+        </div>
+        <div class="field">
+            <span id="village-name">Village:</span>
+            <span id="village-ans"></span>
+        </div>
+    </div>
+
+    <script>
+        const storedInfo = localStorage.getItem("userInformation");
+
+        if(storedInfo){
+            const userInfo = JSON.parse(storedInfo);
+
+            document.getElementById("first-ans").textContent=userInfo.fname;
+            document.getElementById("last-ans").textContent=userInfo.lname;
+            document.getElementById("country-ans").textContent=userInfo.con;
+            document.getElementById("phone-ans").textContent=userInfo.mob;
+            document.getElementById("state-ans").textContent=userInfo.st;
+            document.getElementById("city-ans").textContent=userInfo.cty;
+            document.getElementById("village-ans").textContent=userInfo.vage;
+
+        }
+        else{
+            getData();
+        }
+
+        function getData(){
+            const fname = prompt("Enter your first name");
+            const lname = prompt("Enter your last name");
+            const con =  prompt("Enter your country");
+            const mob = prompt("Enter your phone number");
+            const st =  prompt("Enter your state");
+            const cty = prompt("Enter your city ");
+            const vage = prompt("Enter your village ");
+
+            const userInfo = {
+                fname,
+                lname,
+                con,
+                mob,
+                st,
+                cty,
+                vage
+            }
+            localStorage.setItem("userInformation", JSON.stringify(userInfo));
+
+            document.getElementById("first-ans").textContent=userInfo.fname;
+            document.getElementById("last-ans").textContent=userInfo.lname;
+            document.getElementById("country-ans").textContent=userInfo.con;
+            document.getElementById("phone-ans").textContent=userInfo.mob;
+            document.getElementById("state-ans").textContent=userInfo.st;
+            document.getElementById("city-ans").textContent=userInfo.cty;
+            document.getElementById("village-ans").textContent=userInfo.vage;
+        }
+
+        
+    </script>
+</body>
+</html>
