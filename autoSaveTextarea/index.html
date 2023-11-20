@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto save textarea </title>
+    <style>
+        body{
+            height: 100vh;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        ::placeholder{
+            font-size:25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Auto Save Textarea</h1>
+        <textarea  id="text" cols="75" rows="20" placeholder="Start typing....."></textarea>
+    </div>
+    <script>
+
+        const val = document.getElementById("text");
+
+        function localMemory(){
+            localStorage.setItem("textarea", val.value);
+        }
+        val.value=localStorage.getItem("textarea", val.value);
+        val.addEventListener("input" , localMemory);
+
+
+    </script>
+</body>
+</html>
