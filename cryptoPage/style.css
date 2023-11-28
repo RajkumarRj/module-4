@@ -11,7 +11,7 @@
     justify-content: space-between;
     overflow-y: scroll;
     /* background-color: #d0bcff; */
-    background: linear-gradient(to bottom, #d0bcff, #d0bcff, rgb(131, 131, 217));
+    background: white;
 }
 .main::-webkit-scrollbar{
     width: 0;
@@ -21,7 +21,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.8rem;
-    background-color: #7d4fe6 ;
+    background-color: teal ;
     /* color: rgb(68, 2, 130); */
     color: antiquewhite;
 }
@@ -114,7 +114,7 @@ transform: translateX(0);
     box-shadow: 0 1px 9px violet;
     min-width: 25rem;
     align-items: center;
-    background-color: rgb(188, 110, 233);
+    background-color: teal;
     color: whitesmoke;
     letter-spacing: 0.01rem;
 }
